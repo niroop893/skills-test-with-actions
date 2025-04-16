@@ -34,3 +34,9 @@ jobs:
         run: |
           npm install markdownlint
           npx remark . --use remark-preset-lint-consistent --frail
+
+      - name: Upload markdown lint report
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdown-lint-report
+          path: markdown-lint-report.json
